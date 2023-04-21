@@ -23,7 +23,7 @@
 #include "lwip/netdb.h"
 #include "lwip/dns.h"
 #include "dht.h"
-#include "../config.h"
+#include "config.h"
 
 /* HTTP Constants that aren't configurable in menuconfig */
 #define WEB_PATH "/measurement"
@@ -34,7 +34,7 @@ static const dht_sensor_type_t sensor_type = DHT_TYPE_DHT11;
 
 static const char *TAG = "temp_collector";
 
-static char *BODY = "id="DEVICE_ID"&t=%0.2f&h=%0.2f";
+static char *BODY = "id="DEVICE_ID"&key=%x&t=%0.2f&h=%0.2f";
 
 static char *REQUEST_POST = "POST "WEB_PATH" HTTP/1.0\r\n"
     "Host: "API_IP_PORT"\r\n"
@@ -64,7 +64,7 @@ static void http_get_task(void *pvParameters)
     while(1) {
         if (dht_read_data(sensor_type, dht_gpio, &humidity, &temperature) == ESP_OK) {
             ESP_LOGI(TAG,"Humidity: %d%% Temp: %dC\n", humidity / 10, temperature / 10);
-            sprintf(body, BODY, (float) temperature/10  , (float) humidity/10);
+            sprintf(body, BODY, esp_random() , (float) temperature/10  , (float) humidity/10);
             sprintf(send_buf, REQUEST_POST, (int)strlen(body),body );
 	    ESP_LOGI(TAG,"sending: \n%s\n",send_buf);
         } else {
