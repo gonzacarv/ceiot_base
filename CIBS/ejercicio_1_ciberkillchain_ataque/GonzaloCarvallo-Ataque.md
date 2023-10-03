@@ -43,4 +43,5 @@ El proyecto tiene como objetivo mejorar un sistema domótico existente al integr
   
 * Actions on Objectives
   - Con los permisos de administrador, se identifican bandas horarias de pozo uso del servidor, y durante las mismas se realizan las copias de información ilegal al mismo, las aplicaciones para el procesamiento y gestión de la misma. Se configuran los accesos necesarios para disponer de la información.
+  Prueba git
 
