@@ -8,6 +8,8 @@ El proyecto tiene como objetivo mejorar un sistema domótico existente al integr
 
 [Link detalle del proyecto](https://drive.google.com/file/d/1biDw8UqLcxiEHpN7Hczr9RcnTaWEhQBh/view?usp=drive_link) 
 
+*Para la finalidad del ejercicio se asumirá que el servidor además de alojar el broker MQTT también tendrá una base de datos del sistema.
+
 # Resolución
 
 * Objetivo: 
@@ -43,5 +45,5 @@ El proyecto tiene como objetivo mejorar un sistema domótico existente al integr
   
 * Actions on Objectives
   - Con los permisos de administrador, se identifican bandas horarias de pozo uso del servidor, y durante las mismas se realizan las copias de información ilegal al mismo, las aplicaciones para el procesamiento y gestión de la misma. Se configuran los accesos necesarios para disponer de la información.
-  Prueba git
+
 
